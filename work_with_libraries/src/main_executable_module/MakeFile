@@ -1,0 +1,19 @@
+build: main_executable_module.c ../data_libs/data_io.c ../data_module/data_process.c ../yet_another_decision_module/decision.c ../data_libs/data_stat.c
+	gcc -c main_executable_module.c ../data_libs/data_io.c ../data_module/data_process.c ../yet_another_decision_module/decision.c ../data_libs/data_stat.c
+	gcc data_io.o data_process.o data_stat.o decision.o main_executable_module.o -Wall -Werror -Wextra -o ../../build/Quest_3
+	mv *.o o_files/
+clear: o_files/data_io.o o_files/data_process.o o_files/data_stat.o o_files/decision.o o_files/main_executable_module.o
+	rm ../../build/Quest_3
+	rm -f $(wildcard o_files/*.o)
+rebuild: main_executable_module.c ../data_libs/data_io.c ../data_module/data_process.c ../yet_another_decision_module/decision.c ../data_libs/data_stat.c
+	rm ../../build/Quest_3
+	rm -f $(wildcard o_files/*.o)
+	gcc -c main_executable_module.c ../data_libs/data_io.c ../data_module/data_process.c ../yet_another_decision_module/decision.c ../data_libs/data_stat.c
+	gcc data_io.o data_process.o data_stat.o decision.o main_executable_module.o -Wall -Werror -Wextra -o ../../build/Quest_3
+	mv *.o o_files/
+all: main_executable_module.c ../data_libs/data_io.c ../data_module/data_process.c ../yet_another_decision_module/decision.c ../data_libs/data_stat.c
+	rm ../../build/Quest_3
+	rm -f $(wildcard o_files/*.o)
+	gcc -c main_executable_module.c ../data_libs/data_io.c ../data_module/data_process.c ../yet_another_decision_module/decision.c ../data_libs/data_stat.c
+	gcc data_io.o data_process.o data_stat.o decision.o main_executable_module.o -Wall -Werror -Wextra -o ../../build/Quest_3
+	mv *.o o_files/
